@@ -12,7 +12,14 @@
         "scripts": ["background.js"]
     },
     "browser_action": {
-        "default_title": "Reload styles."
+        "default_icon": "icon19.png",
+        "default_title": "Reload styles on this page."
     },
-    "permissions": ["activeTab"]
+    "permissions": ["activeTab"],
+    "content_scripts": [
+        {
+          "matches": ["*://*/*"],
+          "js": ["content.js"]
+        }
+    ]
 }
